@@ -154,7 +154,6 @@ public class Holiday10 {
     public static int[] searchRange(int[] nums, int target){
         //采用二分查找法
         //起码看起来时间复杂度是O(log(n))
-        boolean exit = false;
         int index = -1;//找到一个存在对应值的坐标
         int[] ret = new int[2];
         int count = 0;
@@ -165,11 +164,11 @@ public class Holiday10 {
             if(target < nums[mid]){//在左半部分
                 right = mid - 1;
             }
-            else if(target > nums[mid]){
+            else if(target > nums[mid]){//右半部分
                 left = mid + 1;
             }
             else{
-                exit = true;
+
                 index = mid;
                 break;
             }
